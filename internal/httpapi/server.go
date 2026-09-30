@@ -10,7 +10,7 @@ func NewHandler(serviceName string) http.Handler {
 	mux.HandleFunc("/health", func(w http.ResponseWriter, _ *http.Request) {
 		writeJSON(w, http.StatusOK, map[string]string{
 			"service": serviceName,
-			"status":  "ok",
+			"status":  "ok!",
 		})
 	})
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
