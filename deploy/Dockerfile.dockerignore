@@ -1,0 +1,6 @@
+.git
+.github
+bin
+config.local.yaml
+*.test
+*.swp

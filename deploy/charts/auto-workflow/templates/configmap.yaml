@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "auto-workflow.fullname" . }}-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "auto-workflow.labels" . | nindent 4 }}
+data:
+  config.yaml: |-
+    app_name: {{ .Values.appConfig.appName | quote }}
+    apiport: {{ .Values.service.port }}
+    environment: {{ .Values.appConfig.environment | quote }}

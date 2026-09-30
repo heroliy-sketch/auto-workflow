@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "auto-workflow.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "auto-workflow.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "auto-workflow.selectorLabels" . | nindent 4 }}

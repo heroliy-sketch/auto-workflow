@@ -1,0 +1,3 @@
+app_name: auto-workflow
+apiport: 8080
+environment: development
