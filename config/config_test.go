@@ -18,7 +18,7 @@ func TestLoad(t *testing.T) {
 	}
 
 	if got.AppName != "test-service" || got.APIPort != 9090 || got.Environment != "test" {
-		t.Fatalf("unexpected config 11: %+v", got)
+		t.Fatalf("unexpected config: %+v", got)
 	}
 }
 
